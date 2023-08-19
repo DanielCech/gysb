@@ -38,14 +38,14 @@ public struct Config : Decodable {
 }
 
 public extension Config {
-    public init(from decoder: Decoder) throws {
+    init(from decoder: Decoder) throws {
         let kc = try decoder.container(keyedBy: CodingKeys.self)
         self.packageDependencies = try kc.decodeIfPresent([PackageDependency].self, forKey: .packageDependencies) ?? []
         self.targetDependencies = try kc.decodeIfPresent([TargetDependency].self, forKey: .targetDependencies) ?? []
         self.includes = try kc.decodeIfPresent([String].self, forKey: .includes) ?? []
     }
     
-    public mutating func updateIncludePaths() throws {
+    mutating func updateIncludePaths() throws {
         guard let configPath = configPath else {
             self.includesFiles = []
             return
@@ -58,7 +58,7 @@ public extension Config {
         self.includesFiles = paths
     }
 
-    public static func fromJSON(path: URL) throws -> Config {
+    static func fromJSON(path: URL) throws -> Config {
         let data = try Data.init(contentsOf: path)
         var config = try JSONDecoder().decode(Config.self, from: data)
         config.configPath = path
@@ -66,7 +66,7 @@ public extension Config {
         return config
     }
     
-    public static func searchForSource(path: URL) -> URL? {
+    static func searchForSource(path: URL) -> URL? {
         let fm = FileManager.default
         
         var dir = path.deletingLastPathComponent().absoluteURL

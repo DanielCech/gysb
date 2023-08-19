@@ -1,4 +1,4 @@
-// swift-tools-version:4.0
+// swift-tools-version:5.0
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -16,7 +16,7 @@ let package = Package(
             targets: ["gysb"])
     ],
     dependencies: [
-        .package(url: "https://github.com/IBM-Swift/BlueCryptor.git", from: "0.8.21")
+        .package(url: "https://github.com/Kitura/BlueCryptor.git", from: "2.0.1")
     ],
     targets: [
         .target(name: "GysbBase",

@@ -24,7 +24,7 @@ extension Driver.State {
     }
     
     public func buildWorkIndexForEntry(index: Int) -> Int? {
-        return buildWorks.index { work in
+        return buildWorks.firstIndex { work in
             work.entryIndices.contains(index)
         }
     }

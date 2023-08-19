@@ -9,7 +9,7 @@ import Foundation
 import GysbBase
 
 public extension Config.PackageDependency.Requirement {
-    public init(from decoder: Decoder) throws {
+    init(from decoder: Decoder) throws {
         let kc = try decoder.container(keyedBy: CodingKeys.self)
         let type = try kc.decode(String.self, forKey: .type)
         switch type {

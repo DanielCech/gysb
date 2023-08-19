@@ -42,9 +42,10 @@ public func resolvePath(_ path: URL, in directory: URL) -> URL {
 }
 
 public func getRandomUInt32() -> UInt32 {
-    var bytes: [UInt8] = try! Random.generate(byteCount: 4)
-    let p = UnsafeMutableRawPointer(&bytes).bindMemory(to: UInt32.self, capacity: 1)
-    return p.pointee
+    return UInt32.random(in: UInt32.min ... UInt32.max)
+//    var bytes: [UInt8] = try! Random.generate(byteCount: 4)
+//    let p = UnsafeMutableRawPointer(&bytes).bindMemory(to: UInt32.self, capacity: 1)
+//    return p.pointee
 }
 
 public func getRandomString(length: Int) -> String {

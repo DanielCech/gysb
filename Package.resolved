@@ -2,21 +2,12 @@
   "object": {
     "pins": [
       {
-        "package": "CommonCrypto",
-        "repositoryURL": "https://github.com/IBM-Swift/CommonCrypto.git",
-        "state": {
-          "branch": null,
-          "revision": "9156d238dbc4c15455b77b45e721b2bb0b995e31",
-          "version": "0.1.5"
-        }
-      },
-      {
         "package": "Cryptor",
-        "repositoryURL": "https://github.com/IBM-Swift/BlueCryptor.git",
+        "repositoryURL": "https://github.com/Kitura/BlueCryptor.git",
         "state": {
           "branch": null,
-          "revision": "16f9c7ddcbe11bbd32106a791ebef2108a4e9183",
-          "version": "0.8.21"
+          "revision": "cec97c24b111351e70e448972a7d3fe68a756d6d",
+          "version": "2.0.2"
         }
       }
     ]

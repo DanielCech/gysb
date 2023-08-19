@@ -19,7 +19,7 @@ public func expandGlobStar(pattern: String, in directory: URL?) throws -> [Strin
         throw Error(message: "globstar can be used at most one")
     }
     
-    guard let globStarIndex = (patternParts.index { $0 == "**" }) else {
+    guard let globStarIndex = (patternParts.firstIndex { $0 == "**" }) else {
         return [pattern]
     }
     
@@ -60,7 +60,7 @@ public func expandGlobStar(pattern: String, in directory: URL?) throws -> [Strin
 }
 
 public func glob(pattern: String, in directory: URL?) throws -> [URL] {
-    let fm = FileManager.default
+    // let fm = FileManager.default
     
     let cdBack = directory.map { changeCurrentDirectory(path: $0) }
     defer { cdBack?() }
